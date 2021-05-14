@@ -7,18 +7,15 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<!-- To activate the sterotype annotations -->
 	<context:component-scan base-package="com.spring.intl.controller" />
 
 	<context:annotation-config />
 
-	<!-- For reading the properties files -->
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basename" value="/WEB-INF/message" />
 	</bean>
 
-	<!-- Locale Change Interceptor -->
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/init" />
